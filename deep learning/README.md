@@ -1,7 +1,6 @@
 Leaf Classification with Flavia
 ===
 
-# 使用说明
 ## 1. Leaf_classification_Alexnet.py
 ### 1.1 介绍说明
 使用Pytorch搭建AlexNet模型结构（非预训练模型），并训练该模型用于Flavia数据集的叶片分类。
