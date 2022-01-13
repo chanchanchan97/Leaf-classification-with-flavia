@@ -635,26 +635,26 @@ if __name__ == '__main__':
             '''img = cv2.imread(path)
             img = cv2.resize(img, (224, 224))'''
             heatmap = cv2.applyColorMap(cv2.resize(cam_img, (width, height)), cv2.COLORMAP_JET)
-            result = cv2.addWeighted(img, 0.5, heatmap, 0.5, 0)
+            result = cv2.addWeighted(img, 0.5, heatmap, 0.5, 0)  # CAM热力图与原图像叠加
             text = '%s: %.2f%%' % (class_name[pred_class], prob_pred[pred_class] * 100)
             cv2.putText(result, text, (25, 70), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.8, color=(123, 222, 238), thickness=2, lineType=cv2.LINE_AA)
-            if cbam is True:
-                if rotate is True:
+            if cbam is True:  # 使用CBAM模块
+                if rotate is True:  # 对输入图像进行旋转
                     file_name = os.path.splitext(img_class)[0]
                     file_extension = os.path.splitext(img_class)[1]
                     file_rename = file_name + str('_') + str(angle) + str('_CBAM') + file_extension
-                else:
+                else:  # 不对输入图像进行旋转
                     file_name = os.path.splitext(img_class)[0]
                     file_extension = os.path.splitext(img_class)[1]
                     file_rename = file_name + str('_CBAM')+ file_extension
-            else:
-                if rotate is True:
+            else:  # 不使用CBAM模块
+                if rotate is True:  # 对输入图像进行旋转
                     file_name = os.path.splitext(img_class)[0]
                     file_extension = os.path.splitext(img_class)[1]
                     file_rename = file_name + str('_') + str(angle) + file_extension
-                else:
+                else:  # 不对输入图像进行旋转
                     file_rename = img_class
-            cv2.imwrite(os.path.join(save_path, leaf_class, file_rename), result)
+            cv2.imwrite(os.path.join(save_path, leaf_class, file_rename), result)  # 保存图片
             '''cv2.namedWindow('image', 0)
             cv2.resizeWindow('image', (width, height))
             cv2.moveWindow("image", 450, 100)
