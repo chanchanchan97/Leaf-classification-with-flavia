@@ -197,28 +197,6 @@ class VGG_Net(nn.Module):
         return output
 
 
-# 使用VGG预训练模型中的特征提取层+全连接层
-class VGG_PretrainedModel(nn.Module):
-    def __init__(self, pretrained_model):
-        super(VGG_PretrainedModel, self).__init__()
-        self.vgg = pretrained_model
-        self.fc = nn.Sequential(nn.Linear(25088, 512),
-                                nn.ReLU(),
-                                nn.Dropout(0.5),
-                                nn.Linear(512, 256),
-                                nn.ReLU(),
-                                nn.Dropout(0.5),
-                                nn.Linear(256, 32)
-                                )
-
-    # 前向传播路径
-    def forward(self, x):
-        x = self.vgg(x)
-        output = self.fc(x.view(x.size(0), -1))
-
-        return output
-
-
 # 定义网络权重初始化
 def weights_initialize(model):
     for m in model.modules():
@@ -403,10 +381,4 @@ if __name__ == '__main__':
 
     vggnet = VGG_Net(small_conv_arch, fc_features, fc_hidden_units)
     weights_initialize(vggnet)
-    '''vgg11 = models.vgg11(pretrained=True)
-    model = vgg11.features
-    for param in model.parameters():
-        param.requires_grad_(False)
-    vggnet = VGG_PretrainedModel(model)'''
-    #model_strcture_visual(vggnet, img_depth=3, img_size=224, graph_type='hl')
     train_model_process(vggnet)
