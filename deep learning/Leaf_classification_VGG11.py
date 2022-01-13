@@ -375,9 +375,9 @@ def train_model_process(myconvnet):
 if __name__ == '__main__':
     #train_val_split(img_dir, train_dir, val_dir)
 
-    small_conv_arch = [(1, 3, 64), (1, 64, 128), (2, 128, 256), (2, 256, 512), (2, 512, 512)]
-    fc_features = 512 * 7 * 7
-    fc_hidden_units = 4096
+    small_conv_arch = [(1, 3, 64), (1, 64, 128), (2, 128, 256), (2, 256, 512), (2, 512, 512)]  # vgg模块参数
+    fc_features = 512 * 7 * 7  # 全连接层的输入特征数
+    fc_hidden_units = 4096  # 全连接层的隐藏单元数
 
     vggnet = VGG_Net(small_conv_arch, fc_features, fc_hidden_units)
     weights_initialize(vggnet)
