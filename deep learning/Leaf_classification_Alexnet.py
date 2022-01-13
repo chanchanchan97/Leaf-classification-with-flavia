@@ -88,6 +88,7 @@ def train_val_split(imgdir, traindir, valdir, split_rate=0.8):
     print('dataset has been split.')
 
 
+# 处理训练集数据
 def train_data_process(train_data_path):
     train_data = ImageFolder(train_data_path, transform=train_data_transforms)
     train_data_loader = Data.DataLoader(train_data, batch_size=32, shuffle=True, num_workers=0)
@@ -113,6 +114,7 @@ def train_data_process(train_data_path):
     return train_data_loader, class_label
 
 
+# 处理验证集数据
 def val_data_process(val_data_path):
     val_data = ImageFolder(val_data_path, transform=val_data_transforms)
     val_data_loader = Data.DataLoader(val_data, batch_size=1, shuffle=True, num_workers=0)
@@ -128,12 +130,13 @@ def test_data_process(test_data_path):
     return test_data_loader
 
 
+# 模型结构可视化  
 def model_strcture_visual(model, img_depth, img_size):
     x = torch.randn(1, img_depth, img_size, img_size).requires_grad_(True)
     y = model(x)
     net = make_dot(y, params=dict(list(model.named_parameters()) + [('x', x)]))
     net.format = 'png'
-    net.directory = "C:/Users/HASEE/Desktop/Pycharm_Project"
+    net.directory = "C:/Users/HASEE/Desktop/Pycharm_Project"  # 保存路径
     net.view()
 
 
@@ -326,8 +329,8 @@ def test_model(model, testdataloader, label, device):
 
 # 训练模型
 def train_model_process(myconvnet):
-    optimizer = torch.optim.SGD(myconvnet.parameters(), lr=0.02, weight_decay=0.01)  # 使用Adam优化器，学习率为0.0003
-    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.98, last_epoch=-1)
+    optimizer = torch.optim.SGD(myconvnet.parameters(), lr=0.02, weight_decay=0.01)  # 使用SGD优化器，初始学习率为0.02，正则化系数为0.01
+    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.98, last_epoch=-1)  # 指数衰减，衰减系数为0.98
     criterion = nn.CrossEntropyLoss()  # 损失函数为交叉熵函数
     device = 'cuda' if torch.cuda.is_available() else 'cpu'  # GPU加速
     train_loader, class_label = train_data_process(train_dir)  # 加载训练集
