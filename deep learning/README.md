@@ -1,4 +1,4 @@
-Leaf Classification with Flavia
+Deep Learning
 ===
 
 # 1. Leaf_classification_Selfnet.py
