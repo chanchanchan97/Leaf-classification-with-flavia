@@ -101,7 +101,7 @@ train_val_split(imgdir, traindir, valdir, split_rate=0.8)函数的作用是将�
 ## 6.5 注意力机制
 1. Channel_Attention(nn.Module)类和Spatial_Attention(nn.Module)类分别定义了通道注意力模块和空间注意力模块。
 2. CBAM(nn.Module)类定义了CBAM注意力模块，它主要由通道注意力模块和空间注意力模块构成。
-3. 
+3. CBAM注意力模块添加在Bottleneck和BasicBlock中，其中参数**use_cbam**表示是否添加注意力模块。
 ## 6.6 权重初始化
 weights_initialize(model)函数的作用是对网络模型中卷积层的权重使用Kaiming初始化。
 ## 6.7 模型训练
