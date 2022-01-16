@@ -9,6 +9,7 @@ from sklearn.decomposition import PCA
 
 classdir = 'C:/Users/HASEE/Desktop/Pycharm_Project/images/Leaves/'
 imgdir = 'C:/Users/HASEE/Desktop/Pycharm_Project/images/Leaves/0/1001.jpg'
+csvdir = 'C:/Users/HASEE/Desktop/Pycharm_Project/feature_r5_2.csv'
 
 
 def histogram(image):
@@ -185,4 +186,4 @@ if __name__ == '__main__':
     print(np.array(data_reduction).shape)'''
 
     datalist = pd.DataFrame(columns=name, data=img_data)
-    datalist.to_csv('C:/Users/HASEE/Desktop/Pycharm_Project/feature_r5_2.csv')
+    datalist.to_csv(csvdir)
