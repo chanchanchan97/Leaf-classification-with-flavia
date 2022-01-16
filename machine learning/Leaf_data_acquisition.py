@@ -164,11 +164,11 @@ if __name__ == '__main__':
         for img_class in imglist:
             img_id = os.path.splitext(img_class)[0]
             class_id = leaf_class
-            thresh, f = img_process(classdir+leaf_class+'/'+img_class)
-            if f[3] == 0 or f[1] == 0 or f[0] == 0 or f[5] == 0:
+            thresh, f = img_process(classdir+leaf_class+'/'+img_class)  # 获取5种几何特征
+            if f[3] == 0 or f[1] == 0 or f[0] == 0 or f[5] == 0:  # 将特征值提取有问题的叶片图像过滤掉
                 continue
-            f12 = feature12_extraction(thresh, f)
-            if abs(f12[0]) > 2:
+            f12 = feature12_extraction(thresh, f)  # 获取12种数字形态特征
+            if abs(f12[0]) > 2:  # 将特征值提取有问题的叶片图像过滤掉
                 continue
             f12.append(img_id)
             f12.append(class_id)
