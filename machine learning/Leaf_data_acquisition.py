@@ -136,6 +136,13 @@ def data_PCA(data):
     pca = PCA(n_components=5)
     pca.fit(data)
     data_reduction = pca.transform(data)
+    
+    # 数据归一化
+    data_reduction[:, 0] = (data_reduction[:, 0] - np.mean(data_reduction[:, 0])) / np.std(data_reduction[:, 0])
+    data_reduction[:, 1] = (data_reduction[:, 1] - np.mean(data_reduction[:, 1])) / np.std(data_reduction[:, 1])
+    data_reduction[:, 2] = (data_reduction[:, 2] - np.mean(data_reduction[:, 2])) / np.std(data_reduction[:, 2])
+    data_reduction[:, 3] = (data_reduction[:, 3] - np.mean(data_reduction[:, 3])) / np.std(data_reduction[:, 3])
+    data_reduction[:, 4] = (data_reduction[:, 4] - np.mean(data_reduction[:, 4])) / np.std(data_reduction[:, 4])
 
     return data_reduction
 
@@ -175,12 +182,6 @@ if __name__ == '__main__':
             img_data.append(f12)
 
     '''data_reduction = data_PCA(img_data)
-    # 数据归一化
-    data_reduction[:, 0] = (data_reduction[:, 0] - np.mean(data_reduction[:, 0])) / np.std(data_reduction[:, 0])
-    data_reduction[:, 1] = (data_reduction[:, 1] - np.mean(data_reduction[:, 1])) / np.std(data_reduction[:, 1])
-    data_reduction[:, 2] = (data_reduction[:, 2] - np.mean(data_reduction[:, 2])) / np.std(data_reduction[:, 2])
-    data_reduction[:, 3] = (data_reduction[:, 3] - np.mean(data_reduction[:, 3])) / np.std(data_reduction[:, 3])
-    data_reduction[:, 4] = (data_reduction[:, 4] - np.mean(data_reduction[:, 4])) / np.std(data_reduction[:, 4])
     print(np.array(data_reduction).shape)'''
 
     datalist = pd.DataFrame(columns=name, data=img_data)
