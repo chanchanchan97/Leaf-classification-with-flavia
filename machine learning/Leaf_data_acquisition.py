@@ -175,6 +175,7 @@ if __name__ == '__main__':
             img_data.append(f12)
 
     '''data_reduction = data_PCA(img_data)
+    # 数据归一化
     data_reduction[:, 0] = (data_reduction[:, 0] - np.mean(data_reduction[:, 0])) / np.std(data_reduction[:, 0])
     data_reduction[:, 1] = (data_reduction[:, 1] - np.mean(data_reduction[:, 1])) / np.std(data_reduction[:, 1])
     data_reduction[:, 2] = (data_reduction[:, 2] - np.mean(data_reduction[:, 2])) / np.std(data_reduction[:, 2])
