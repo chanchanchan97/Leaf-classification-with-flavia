@@ -67,9 +67,7 @@ weights_initialize(model)函数的作用是对网络模型中卷积层的权重�
 2. test_model(model, testdataloader, label, device)函数定义了模型的测试过程，其中参数**model**为训练好的网络模型，**testdataloader**为测试集数据，**label**为测试集图片的标签，**device**为使用的运算平台（'cuda'或'cpu'）。  
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 4.7 实验结果
-<center>
-  ![VGG11](https://user-images.githubusercontent.com/39607836/149728101-ffbd5fb7-2fb5-4263-9724-14d18ef0f237.png)
-</center>
+![VGG11](https://user-images.githubusercontent.com/39607836/149728101-ffbd5fb7-2fb5-4263-9724-14d18ef0f237.png)
 
 
 # 5. Leaf_classification_Resnet18.py
@@ -118,7 +116,7 @@ weights_initialize(model)函数的作用是对网络模型中卷积层的权重�
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 6.8 实验结果
 <center>
-  ![HRnet](https://user-images.githubusercontent.com/39607836/149729836-b87247a8-545e-4d4d-aa2f-d610c99cbb5c.png) 
+![HRnet](https://user-images.githubusercontent.com/39607836/149729836-b87247a8-545e-4d4d-aa2f-d610c99cbb5c.png) 
 </center>
 
 # 7. CAM_Visualization.py
