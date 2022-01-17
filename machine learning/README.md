@@ -24,9 +24,7 @@ data_PCA(img_data)函数的作用是将12种数字形态特征降维到5维。
 ## 2.3 叶片分类
 ML_classifier(X_train, X_test, y_train, y_test)函数的作用是使用不同的机器学习算法对叶片进行分类，并显示分类准确率和损失函数，其中列表**classifiers**中包含了所使用的机器学习算法。
 ## 2.4 实验结果
-<center>
 ![image](https://user-images.githubusercontent.com/39607836/149734571-bf3b4373-5c93-4648-b11d-94cad8decc5b.png)  
-</center>
-<center>
+
 ![image](https://user-images.githubusercontent.com/39607836/149734641-ddd226c4-2ee4-402a-9ed8-bfd5d9b7226f.png)
-</center>
+
