@@ -32,7 +32,8 @@ AlexNet(nn.Module)类定义了AlexNet的模型结构，以及数据的前向传�
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 2.6 实验结果
 ![alexnet](https://user-images.githubusercontent.com/39607836/149730815-08689dd4-268b-4004-9d46-049d11106cca.png)
-<center>损失函数和分类准确率变化曲线</center>
+  
+<center> 损失函数和分类准确率变化曲线 </center>  
 
 
 # 3. Leaf_classification_GoogLeNet.py
