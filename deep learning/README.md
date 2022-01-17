@@ -32,9 +32,6 @@ AlexNet(nn.Module)类定义了AlexNet的模型结构，以及数据的前向传�
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 2.6 实验结果
 ![alexnet](https://user-images.githubusercontent.com/39607836/149730815-08689dd4-268b-4004-9d46-049d11106cca.png)
-  
-<center> 损失函数和分类准确率变化曲线 </center>  
-
 
 # 3. Leaf_classification_GoogLeNet.py
 ## 3.1 介绍说明
@@ -54,7 +51,7 @@ weights_initialize(model)函数的作用是对网络模型中卷积层的权重�
 2. test_model(model, testdataloader, label, device)函数定义了模型的测试过程，其中参数**model**为训练好的网络模型，**testdataloader**为测试集数据，**label**为测试集图片的标签，**device**为使用的运算平台（'cuda'或'cpu'）。  
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 3.7 实验结果
-![Googlenet](https://user-images.githubusercontent.com/39607836/149730925-07812d10-8a97-4a53-9f32-f47d229c69d3.png "损失函数和分类准确率变化曲线")
+![Googlenet](https://user-images.githubusercontent.com/39607836/149730925-07812d10-8a97-4a53-9f32-f47d229c69d3.png)
 
 # 4. Leaf_classification_VGG11.py
 ## 4.1 介绍说明
@@ -74,7 +71,7 @@ weights_initialize(model)函数的作用是对网络模型中卷积层的权重�
 2. test_model(model, testdataloader, label, device)函数定义了模型的测试过程，其中参数**model**为训练好的网络模型，**testdataloader**为测试集数据，**label**为测试集图片的标签，**device**为使用的运算平台（'cuda'或'cpu'）。  
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 4.7 实验结果
-![VGG11](https://user-images.githubusercontent.com/39607836/149728101-ffbd5fb7-2fb5-4263-9724-14d18ef0f237.png "损失函数和分类准确率变化曲线")
+![VGG11](https://user-images.githubusercontent.com/39607836/149728101-ffbd5fb7-2fb5-4263-9724-14d18ef0f237.png)
 
 
 # 5. Leaf_classification_Resnet18.py
@@ -95,7 +92,7 @@ weights_initialize(model)函数的作用是对网络模型中卷积层的权重�
 2. test_model(model, testdataloader, label, device)函数定义了模型的测试过程，其中参数**model**为训练好的网络模型，**testdataloader**为测试集数据，**label**为测试集图片的标签，**device**为使用的运算平台（'cuda'或'cpu'）。  
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 5.7 实验结果
-![resnet4](https://user-images.githubusercontent.com/39607836/149728297-b13eb511-9ed9-48b6-a3fc-c23d498f3cf8.png "损失函数和分类准确率变化曲线")
+![resnet4](https://user-images.githubusercontent.com/39607836/149728297-b13eb511-9ed9-48b6-a3fc-c23d498f3cf8.png)
 
 # 6. Leaf_classification_HRnet.py
 ## 6.1 介绍说明
@@ -120,7 +117,7 @@ weights_initialize(model)函数的作用是对网络模型中卷积层的权重�
 2. test_model(model, testdataloader, label, device)函数定义了模型的测试过程，其中参数**model**为训练好的网络模型，**testdataloader**为测试集数据，**label**为测试集图片的标签，**device**为使用的运算平台（'cuda'或'cpu'）。  
 3. train_model_process(myconvnet)函数的作用是获取上述定义的参数，并分别调用train_model()函数和test_model()函数对模型进行训练和测试。
 ## 6.8 实验结果
-![HRnet](https://user-images.githubusercontent.com/39607836/149729836-b87247a8-545e-4d4d-aa2f-d610c99cbb5c.png "损失函数和分类准确率变化曲线") 
+![HRnet](https://user-images.githubusercontent.com/39607836/149729836-b87247a8-545e-4d4d-aa2f-d610c99cbb5c.png) 
 
 # 7. CAM_Visualization.py
 ## 7.1 介绍说明
