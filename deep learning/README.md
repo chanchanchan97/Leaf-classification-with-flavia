@@ -34,6 +34,7 @@ AlexNet(nn.Module)类定义了AlexNet的模型结构，以及数据的前向传�
 ![alexnet](https://user-images.githubusercontent.com/39607836/149730815-08689dd4-268b-4004-9d46-049d11106cca.png)
 <center>损失函数和分类准确率变化曲线</center>
 
+
 # 3. Leaf_classification_GoogLeNet.py
 ## 3.1 介绍说明
 使用Pytorch搭建**GoogLeNet**模型结构（非预训练模型），并训练该模型用于Flavia数据集的图片分类。
